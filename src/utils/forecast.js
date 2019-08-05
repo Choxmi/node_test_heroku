@@ -9,7 +9,7 @@ const forecast = (location , callback) => {
         } else if(body.error) {
             callback(undefined, 'Location Not found')
         } else {
-            callback(body.daily.data[0].summary, undefined)
+            callback(body.daily.data[0].summary + " Today high : "+body.daily.data[0].temperatureHigh+ " Today Low : "+body.daily.data[0].temperatureLow, undefined)
         }
     })
 }
